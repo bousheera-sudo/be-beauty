@@ -1,0 +1,28 @@
+services:
+  # Backend Laravel
+  - type: web
+    name: be-beauty-api
+    env: php
+    buildCommand: composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
+
+  # Frontend React (Static Site)
+  - type: web
+    name: be-beauty-client
+    env: static
+    buildCommand: cd clientapi && npm install && npm run build
+    staticPublishPath: clientapi/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://be-beauty-api.onrender.com/api
