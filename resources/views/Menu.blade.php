@@ -17,7 +17,7 @@
                     <li><a href="{{ route('articles.create') }}" class="text-brand-gold border border-brand-gold px-3 py-1 hover:bg-brand-gold hover:text-white transition duration-300">Ajouter</a></li>
                 @endif
                 
-                @if(Auth::user()->role === 'USER')
+                @if(Auth::user()->role === 'USER' || Auth::user()->role === 'ADMIN')
                     <li><a href="{{ route('espaceclient') }}" class="hover:text-brand-gold transition duration-300">Mon Espace</a></li>
                 @endif
 

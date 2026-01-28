@@ -21,10 +21,7 @@ class UserMiddleware
         if (!$user) {
             return redirect()->route('login');
         }
-        if ($user->role !== User::USER_ROLE) {
-             // Si c'est un ADMIN, il a peut-être droit aussi ? 
-             // L'instruction dit : Accès user => Espace Client.
-             // On va être strict comme demandé.
+        if ($user->role !== User::USER_ROLE && $user->role !== User::ADMIN_ROLE) {
             return redirect('/');
         }
         return $next($request);
