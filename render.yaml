@@ -17,12 +17,4 @@ services:
       - key: CLOUDINARY_URL
         sync: false
 
-  # Frontend React (Static Site)
-  - type: web
-    name: be-beauty-client
-    env: static
-    buildCommand: cd clientapi && npm install && npm run build
-    staticPublishPath: clientapi/build
-    envVars:
-      - key: REACT_APP_API_URL
-        value: https://be-beauty-api.onrender.com/api
+
