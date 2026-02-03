@@ -1,0 +1,12 @@
++------+-------------------------------------------------------+-------+
+| Ran? | Migration                                             | Batch |
++------+-------------------------------------------------------+-------+
+| Yes  | 2014_10_12_000000_create_users_table                  | 1     |
+| Yes  | 2014_10_12_100000_create_password_resets_table        | 1     |
+| Yes  | 2019_08_19_000000_create_failed_jobs_table            | 1     |
+| Yes  | 2019_12_14_000001_create_personal_access_tokens_table | 1     |
+| No   | 2024_01_25_000000_create_articles_table               |       |
+| No   | 2026_01_25_192157_add_category_to_articles_table      |       |
+| No   | 2026_01_25_205431_add_role_to_users_table             |       |
+| No   | 2026_01_25_231542_add_prix_to_articles_table          |       |
++------+-------------------------------------------------------+-------+

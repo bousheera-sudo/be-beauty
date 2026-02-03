@@ -34,7 +34,8 @@ class ArticleSeeder extends Seeder
                 'titre' => $titre,
                 'contenu' => $faker->paragraph(3),
                 'image' => 'https://images.unsplash.com/photo-1596462502278-27bfdd403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                'categorie' => $categorie
+                'categorie' => $categorie,
+                'prix' => $faker->randomFloat(2, 50, 500)
             ]);
         }
     }
